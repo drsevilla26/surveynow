@@ -1,0 +1,16 @@
+<html>
+<head>
+Registro
+</head>
+<body>
+
+<form method='POST'>
+{%csrf_token%}
+
+<textarea cols='20' rows='1' name='correo'></textarea>@unitec.edu<br>
+<input type='submit' value='Registrarse'/>
+</form>
+<a href="/polls">Back</a><br>
+{{ mensa }}
+</body>
+</html>

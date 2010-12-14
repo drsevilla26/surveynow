@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- This is a demonstration of HTML5 goodness with healthy does of CSS3 mixed in -->
+<head>
+    
+    <title>Survey Now</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    			
+    <!--[if IE]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!--[if IE 7]>
+    	<link rel="stylesheet" href="/static/ie7.css" type="text/css" media="screen" />
+    <![endif]-->
+    
+    <link rel="stylesheet" href="/static/style.css" type="text/css" media="screen" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.anchor.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.fancybox-1.2.6.pack.js" type="text/javascript">
+ </script>
+ <script src="/static/js/slider.js" type="text/javascript">
+ </script>
+    
+</head>
+
+<body>
+
+    <header> <!-- HTML5 header tag -->
+    
+    	<div id="headercontainer">
+    
+    		<h1><a class="introlink" href="login">Survey Now!</a></h1>
+    		
+    		<nav> <!-- HTML5 navigation tag -->
+    			<ul>
+    				<li><a class="introlink anchorLink" href="#intro">Intro</a></li>
+    				
+    				<li><a class="aboutlink anchorLink" href="#about">Acerca</a></li>
+    				<li><a class="contactlink anchorLink" href="#contact">Contacto</a></li>
+                    <li><a class="menu_class" >Demo</a>
+                    	<ul class="the_menu">
+                        	<li><a href="/polls/register">Registro</a></li>
+                                <li><a href="/polls/login">Login</a></li>
+                                <li><a href="/polls/">Polls</a></li>
+                               
+                        </ul>
+                    
+                    
+                    
+                    </li>
+    			</ul>				
+    		</nav>
+    	
+    	</div>
+    
+    </header>
+
+    <section id="contentcontainer"> <!-- HTML5 section tag for the content 'section' -->
+    
+    	<section id="intro">
+    	
+    		<h2 class="intro">{{ object.question }} </h2>
+   		<ul>
+{% for choice in object.choice_set.all %}
+    <li>{{ choice.choice }} -- {{ choice.votes }} voto{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="/polls/">Regresa a los Polls!</a>
+
+
+    	</section>
+
+    	   
+    			
+    	<section id="about"> <!-- HTML5 section tag for the about 'section' -->
+    	
+    		<h2 class="about">Acerca</h2>
+    		
+    		<p>Esta es una pagina de surveys para la comunidad de UNITEC en donde solo necesitas tu correo de unitec (@unitec.edu)  para inscribirte y realizar tus surveys</p>
+    	
+    	</section>
+    			
+    	<section id="contact"> <!-- HTML5 section tag for the contact 'section' -->
+    	
+    		<h2 class="contact">Contactanos</h2>
+    		
+    		<p>Mandanos tus sugerencias o comentarios!</p>
+    		
+    		<form id="contactform"> 
+
+    			<p>
+    			  <label for="name">Nombre</label></p> 
+    			<input type="text" id=name name=name placeholder="First and last name" required tabindex="1" /> 
+    			 
+    			<p><label for="email">Email</label></p> 
+    			<input type="text" id=email name=email placeholder="example@domain.com" required tabindex="2" /> 
+    			 
+    			<p>
+    			  <label for="comment">Mensaje</label></p> 
+    			<textarea name="comment" id="comment" tabindex="4"></textarea> 
+    			 
+    			<input name="submit" type="submit" id="submit" tabindex="5" value="Send Message" /> 
+    			 
+    		</form> 
+
+    	
+    	</section>
+    			
+    	<footer> <!-- HTML5 footer tag -->
+    	
+    		<ul>
+    			<li><img src="images/twitter.png" alt="" /><a href="http://twitter.com/tkenny">Follow me on Twitter</a></li>
+    			<li></li>
+    		</ul>
+    	
+    	</footer>	
+    
+    </section>
+    
+  <!--Ni idea que es  <script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-9207090-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script> -->
+    
+</body>
+
+</html>

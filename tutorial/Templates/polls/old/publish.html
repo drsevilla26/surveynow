@@ -1,0 +1,13 @@
+<html>
+<head>
+¡ Encuesta Rapida !
+</head>
+<body>
+<form method='POST'>
+{%csrf_token%}
+<textarea cols='50' rows='2' name='pregunta'></textarea><br>
+<input type='submit' value='Publicar'/>
+</form>
+<a href="/polls">Back to Polls</a>
+</body>
+</html>
